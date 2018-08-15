@@ -6,7 +6,7 @@ namespace McMatters\LaravelScheduleTerminating\Managers;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use RuntimeException;
 use Symfony\Component\Process\Process;
 use Throwable;
@@ -30,11 +30,11 @@ class ScheduleManager
     /**
      * ScheduleManager constructor.
      *
-     * @param Application $app
+     * @param Container $app
      *
      * @throws \RuntimeException
      */
-    public function __construct(Application $app)
+    public function __construct(Container $app)
     {
         $this->checkRequirements();
 
