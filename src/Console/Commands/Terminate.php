@@ -27,28 +27,19 @@ class Terminate extends Command
     protected $description = 'Terminate scheduling processes';
 
     /**
-     * @var ScheduleManager
+     * @var \McMatters\LaravelScheduleTerminating\Managers\ScheduleManager
      */
     protected $manager;
 
     /**
-     * Terminate constructor.
+     * @param \McMatters\LaravelScheduleTerminating\Managers\ScheduleManager $manager
      *
-     * @param ScheduleManager $manager
+     * @return void
      */
-    public function __construct(ScheduleManager $manager)
+    public function handle(ScheduleManager $manager)
     {
         $this->manager = $manager;
 
-        parent::__construct();
-    }
-
-    /**
-     * @return void
-     * @throws \RuntimeException
-     */
-    public function handle()
-    {
         $schedulingCommands = $this->manager->getSchedulingCommands();
 
         if (empty($schedulingCommands)) {

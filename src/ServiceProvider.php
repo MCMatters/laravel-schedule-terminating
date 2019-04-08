@@ -6,7 +6,6 @@ namespace McMatters\LaravelScheduleTerminating;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use McMatters\LaravelScheduleTerminating\Console\Commands\Terminate;
-use McMatters\LaravelScheduleTerminating\Managers\ScheduleManager;
 use const true;
 
 /**
@@ -26,9 +25,7 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('command.schedule.terminate', function ($app) {
-            return new Terminate(new ScheduleManager($app));
-        });
+        $this->app->singleton('command.schedule.terminate', Terminate::class);
 
         $this->commands(['command.schedule.terminate']);
     }
