@@ -1,11 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace McMatters\LaravelScheduleTerminating;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use McMatters\LaravelScheduleTerminating\Console\Commands\Terminate;
+
 use const true;
 
 /**

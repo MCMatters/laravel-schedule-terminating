@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace McMatters\LaravelScheduleTerminating\Managers;
 
@@ -10,10 +10,11 @@ use Illuminate\Contracts\Container\Container;
 use RuntimeException;
 use Symfony\Component\Process\Process;
 use Throwable;
-use const false;
-use const PREG_SPLIT_NO_EMPTY, PREG_SPLIT_DELIM_CAPTURE;
+
 use function array_keys, explode, implode, is_callable, ob_end_clean,
     ob_get_contents, ob_start, preg_split, stripos, system, trim;
+
+use const false, PREG_SPLIT_NO_EMPTY, PREG_SPLIT_DELIM_CAPTURE;
 
 /**
  * Class ScheduleManager
@@ -23,14 +24,14 @@ use function array_keys, explode, implode, is_callable, ob_end_clean,
 class ScheduleManager
 {
     /**
-     * @var Schedule
+     * @var \Illuminate\Console\Scheduling\Schedule
      */
     protected $schedule;
 
     /**
      * ScheduleManager constructor.
      *
-     * @param Container $app
+     * @param \Illuminate\Contracts\Container\Container $app
      *
      * @throws \RuntimeException
      */
@@ -163,6 +164,7 @@ class ScheduleManager
 
     /**
      * @return void
+     *
      * @throws \RuntimeException
      */
     protected function checkRequirements()
