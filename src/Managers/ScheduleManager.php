@@ -11,10 +11,21 @@ use RuntimeException;
 use Symfony\Component\Process\Process;
 use Throwable;
 
-use function array_keys, explode, implode, is_callable, ob_end_clean,
-    ob_get_contents, ob_start, preg_split, stripos, system, trim;
+use function array_keys;
+use function explode;
+use function implode;
+use function is_callable;
+use function ob_end_clean;
+use function ob_get_contents;
+use function ob_start;
+use function preg_split;
+use function stripos;
+use function system;
+use function trim;
 
-use const false, PREG_SPLIT_NO_EMPTY, PREG_SPLIT_DELIM_CAPTURE;
+use const false;
+use const PREG_SPLIT_DELIM_CAPTURE;
+use const PREG_SPLIT_NO_EMPTY;
 
 /**
  * Class ScheduleManager
